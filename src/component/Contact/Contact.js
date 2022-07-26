@@ -1,18 +1,8 @@
 import React from 'react'
-import { Outlet,useNavigate } from "react-router-dom";
+import { Outlet,Link} from "react-router-dom";
 
 const Contact = () => {
-  const navigate=useNavigate()
-  const handleBdAdress=()=>{
-    navigate('bd-address')
-
-    
-  }
-  const handleUsAdress=()=>{
-    navigate('us-address')
-
-    
-  }
+  
   return (
     <section className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
       <div className='flex flex-col justify-center items-center'>
@@ -21,15 +11,19 @@ const Contact = () => {
         </h1>
 
         <div className='flex justify-center items-center'>
-          <button onClick={handleBdAdress} className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
+          <Link to={'bd-address'} className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
             BD Address
-          </button>
-          <button onClick={handleUsAdress} className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
+          </Link>
+          <Link to='us-address' className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
             US Address
-          </button>
+          </Link>
+         
         </div>
+        <div className='flex justify-center items-center w-full py-44'>
+            <Outlet/>
+          </div>
       </div>
-      <Outlet/>
+    
     </section>
   )
 }

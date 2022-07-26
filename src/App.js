@@ -10,6 +10,7 @@ import Footer from './component/Footer';
 import CoinDetails from './component/CoinDetails/CoinDetails';
 import BdAddress from './component/Contact/BdAdress';
 import UsAddress from './component/Contact/UsAdress';
+import NotFound from './component/NotFound';
 
 
 
@@ -28,6 +29,7 @@ function App() {
         </Route>
         <Route path='about' element={<About/>}></Route>
         <Route path='coin-details/:id' element={<CoinDetails/>}></Route>
+        <Route path='*' element={<NotFound/>}></Route>
 
       </Routes>
       <Footer></Footer>
