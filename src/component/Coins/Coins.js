@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CoinDetails from '../CoinDetails/CoinDetails';
+import CoinCard from '../CoinCard/CoinCard';
 
 const Coins = () => {
     const [coins, setCoins] = useState([]);
@@ -24,7 +24,7 @@ const Coins = () => {
         <div>
             <h1>Coins page {coins.length}</h1>
             {
-                coins.map((coin)=><CoinDetails  coin={coin}  key={coin.id}></CoinDetails> )
+                coins.map((coin)=><CoinCard  coin={coin}  key={coin.id}></CoinCard> )
             }
 
         </div>
