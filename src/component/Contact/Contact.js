@@ -1,6 +1,18 @@
 import React from 'react'
+import { Outlet,useNavigate } from "react-router-dom";
 
 const Contact = () => {
+  const navigate=useNavigate()
+  const handleBdAdress=()=>{
+    navigate('bd-address')
+
+    
+  }
+  const handleUsAdress=()=>{
+    navigate('us-address')
+
+    
+  }
   return (
     <section className='px-4 pt-20 pb-24 mx-auto max-w-7xl md:px-2'>
       <div className='flex flex-col justify-center items-center'>
@@ -9,14 +21,15 @@ const Contact = () => {
         </h1>
 
         <div className='flex justify-center items-center'>
-          <button className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
+          <button onClick={handleBdAdress} className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
             BD Address
           </button>
-          <button className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
+          <button onClick={handleUsAdress} className='  py-1 px-3 text-white mt-3 mx-1 bg-cyan-600 w-auto sm:mb-0'>
             US Address
           </button>
         </div>
       </div>
+      <Outlet/>
     </section>
   )
 }
